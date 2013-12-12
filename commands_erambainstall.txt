@@ -1,0 +1,71 @@
+    1  cat /etc/rc.local 
+    2  sudo update-locale LANG=en_US
+    3  sudo locale-gen en_US
+    4  sudo update-locale LANG=en_US
+    5  hist
+    6  history
+    7  sudo apt-get update
+    8  history | grep lock
+    9  grep | history lock
+   10  clear
+   11  history
+   12  clear
+   13  sudo apt-get update
+   14  sudo rm /var/lib/apt/lists/lock
+   15  sudo rm /var/cache/apt/archives/lock
+   16  sudo apt-get update
+   17  sudo apt-get install php5
+   18  sudo apt-get mysql-server
+   19  sudo apt-get install mysql-server
+   20  sudo apt-get install mysql-client
+   21  sudo apt-get install apache2
+   22  sudo apt-get install mysl-server libapache2-mod-auth-mysql php5-mysql
+   23  sudo apt-get install mysql-server libapache2-mod-auth-mysql php5-mysql
+   24  clear
+   25  ls
+   26  cd /var/www/
+   27  ls
+   28  cd eramba1.1_deploy/
+   29  ls
+   30  clear
+   31  mysql -u root -p
+   32  mysql -u root -p localhost eramba < base
+   33  cd /var/www/eramba1.1_deploy/db-schema/
+   34  mysql -u root -p localhost eramba < base_schema_11_v2.sql 
+   35  mysql -u root -p
+   36  mysql -u root -p localhost eramba < base_schema_11_v2.sql 
+   37  mysql
+   38  mysql -u root -p
+   39  mysql -u root -p localhost eramba -h < base_schema_11_v2.sql 
+   40  mysql -u root -p
+   41  clear
+   42  mysql -u root -p -h localhost eramba -h < base_schema_11_v2.sql 
+   43  mysql -u root -p
+   44  ls
+   45  clear
+   46  ls
+   47  mysql -u root -p
+   48  clear
+   49  mysql -u root -p
+   50  clear
+   51  ls
+   52  mysql -u root -p
+   53  mysql -u root -p -h localhost eramba -h < base_schema_11_v2.sql 
+   54  mysql -u root -p -h localhost eramba < base_schema_11_v2.sql 
+   55  mysql -u root -p
+   56  sudo service apache2 restart
+   57  sudo apt-get install php5 libapache2-mod-php5 php5-mcrypt
+   58  exit
+   59  sudo service restart apache2
+   60  sudo service apache2 restart
+   61  cd /var/www/eramba1.1_deploy/
+   62  ls
+   63  sudo service apache2 restart
+   64  ifconfig
+   65  mysql -u root -p
+   66  sudo service apache2 restart
+   67  ifconfig
+   68  sudo apt-get install libapache2-mod-php5 php5-mysql
+   69  sudo service apache2 restart
+   70  history
+   71  history > commands_erambainstall.txt
