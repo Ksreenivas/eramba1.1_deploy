@@ -5,10 +5,10 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"legal_list");
 	$base_url_edit  = build_base_url($section,"legal_edit");

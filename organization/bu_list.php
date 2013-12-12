@@ -9,30 +9,30 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"]) ? $_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"]) ? $_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"bu_list");
 	$base_url_edit_process= build_base_url($section,"process_edit");
 	$base_url_edit = build_base_url($section,"bu_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$bu_id = $_GET["bu_id"];
-	$bu_name = $_GET["bu_name"];
-	$bu_description = $_GET["bu_description"];
-	$bu_disabled = $_GET["bu_disabled"];
+	$bu_id = isset($_GET["bu_id"])?$_GET["bu_id"]:null;
+	$bu_name =isset($_GET["bu_name"])?$_GET["bu_name"]:null;
+	$bu_description = isset($_GET["bu_description"])?$_GET["bu_description"]:null;
+	$bu_disabled = isset($_GET["bu_disabled"])?$_GET["bu_disabled"]:null;
 	
-	$process_id = $_GET["process_id"];
-	$process_name = $_GET["process_name"];
-	$process_description = $_GET["process_description"];
-	$process_mto = $_GET["process_mto"];
-	$process_revenue = $_GET["process_revenue"];
+	$process_id = isset($_GET["process_id"])?$_GET["process_id"]:null;
+	$process_name = isset($_GET["process_name"])?$_GET["process_name"]:null;
+	$process_description = isset($_GET["process_description"])?$_GET["process_description"]:null;
+	$process_mto = isset($_GET["process_mto"])?$_GET["process_mto"]:null;
+	$process_revenue = isset($_GET["process_revenue"])?$_GET["process_revenue"]:null;
 	if (!is_numeric($process_mto)) {
 		$process_mto = 360;
 	}
-	$process_disabled = $_GET["process_disabled"];
+	$process_disabled = isset($_GET["process_disabled"])?$_GET["process_disabled"]:null;
 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update_bu" & is_numeric($bu_id)) {

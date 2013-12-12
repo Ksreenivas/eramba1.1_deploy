@@ -7,20 +7,20 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"tp_list");
 	$base_url_edit = build_base_url($section,"tp_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$tp_id = $_GET["tp_id"];
-	$tp_name = $_GET["tp_name"];
-	$tp_description = $_GET["tp_description"];
-	$tp_type_id = $_GET["tp_type_id"];
-	$tp_disabled = $_GET["tp_disabled"];
+	$tp_id = isset($_GET["tp_id"])?$_GET["tp_id"]:null;
+	$tp_name = isset($_GET["tp_name"])?$_GET["tp_name"]:null;
+	$tp_description = isset($_GET["tp_description"])?$_GET["tp_description"]:null;
+	$tp_type_id = isset($_GET["tp_type_id"])?$_GET["tp_type_id"]:null;
+	$tp_disabled = isset($_GET["tp_disabled"])?$_GET["tp_disabled"]:null;
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($tp_id)) {
