@@ -5,29 +5,29 @@
 	include_once("lib/system_authorization_lib.php");
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
-	$sort = $_GET["sort"];
+	$sort = isset ($_GET["sort"]) ? $_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset ($_GET["action"]) ? $_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"system_records_list");
 	$base_url_edit = build_base_url($section,"system_records_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$system_records_id = $_GET["system_records_id"];
-	$system_records_name = $_GET["system_records_name"];
-	$system_records_description = $_GET["system_records_description"];
-	$system_records_disabled = $_GET["system_records_disabled"];
+	$system_records_id = isset ($_GET["system_records_id"]) ? $_GET["system_records_id"]:null;
+	$system_records_name = isset ($_GET["system_records_name"]) ? $_GET["system_records_name"]:null;
+	$system_records_description = isset ($_GET["system_records_description"]) ? $_GET["system_records_description"]:null;
+	$system_records_disabled = isset ($_GET["system_records_disabled"]) ? $_GET["system_records_disabled"]:null;
 
 
 	# this will get called often ...
 	# if i have any of this items, then i need to show that! .. there might be a need to add
-	$system_records_lookup_section = $_GET["system_records_lookup_section"];
-	$system_records_lookup_subsection = $_GET["system_records_lookup_subsection"];
-	$system_records_lookup_item_id = $_GET["system_records_lookup_item_id"];
-	$system_records_lookup_action = $_GET["system_records_lookup_action"];
-	$system_records_lookup_author = $_GET["system_records_lookup_author"];
-	$system_records_notes = $_GET["system_records_notes"];
+	$system_records_lookup_section = isset ($_GET["system_records_lookup_section"]) ? $_GET["system_records_lookup_section"]:null;
+	$system_records_lookup_subsection = isset ($_GET["system_records_lookup_subsection"]) ? :null;
+	$system_records_lookup_item_id = isset ($_GET["system_records_lookup_item_id"]) ? $_GET["system_records_lookup_subsection"]:null;
+	$system_records_lookup_action = isset ($_GET["system_records_lookup_action"]) ? $_GET["system_records_lookup_action"]:null;
+	$system_records_lookup_author = isset ($_GET["system_records_lookup_author"]) ? $_GET["system_records_lookup_author"]:null;
+	$system_records_notes = isset ($_GET["system_records_notes"]) ? $_GET["system_records_notes"]:null;
 
 	# if i have all this values, then i can search for something specific ...
 	if (!empty($system_records_lookup_section) AND !empty($system_records_lookup_subsection) AND !empty($system_records_lookup_item_id)) {

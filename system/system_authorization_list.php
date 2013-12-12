@@ -8,22 +8,22 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset ($_GET["sort"]) ? $_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset ($_GET["action"]) ? $_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"system_authorization_list");
 	$base_url_edit = build_base_url($section,"system_authorization_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$system_users_id = $_GET["system_users_id"];
-	$system_users_name = $_GET["system_users_name"];
-	$system_users_surname = $_GET["system_users_surname"];
-	$system_users_group_role_id = $_GET["system_users_group_role_id"];
-	$system_users_login = $_GET["system_users_login"];
-	$system_conf_admin_pwd = $_GET["system_conf_admin_pwd"];
-	$system_users_disabled = $_GET["system_users_disabled"];
+	$system_users_id = isset ($_GET["system_users_id"]) ? $_GET["system_users_id"]:null;
+	$system_users_name = isset ($_GET["system_users_name"]) ? $_GET["system_users_name"]:null;
+	$system_users_surname = isset ($_GET["system_users_surname"]) ? $_GET["system_users_surname"]:null;
+	$system_users_group_role_id = isset ($_GET["system_users_group_role_id"]) ? $_GET["system_users_group_role_id"]:null;
+	$system_users_login = isset ($_GET["system_users_login"]) ? $_GET["system_users_login"]:null;
+	$system_conf_admin_pwd = isset ($_GET["system_conf_admin_pwd"]) ? $_GET["system_conf_admin_pwd"]:null;
+	$system_users_disabled = isset($_GET["system_users_disabled"]) ? $_GET["system_users_disabled"]:null;
 
 	# i need to know who is asking to do what ..
 	$current_logged_user_id = $_SESSION['logged_user_id'];
