@@ -10,28 +10,28 @@
 	include_once("lib/system_records_lib.php");
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_edit = build_base_url($section,"asset_edit");
 	$base_url_list = build_base_url($section,"asset_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$asset_id = $_GET["asset_id"];
-	$asset_name = $_GET["asset_name"];
-	$asset_description = $_GET["asset_description"];
-	$asset_media_type_id = $_GET["asset_media_type_id"];
-	$asset_legal_id = $_GET["asset_legal_id"];
-	$asset_label_id = $_GET["asset_label_id"];
-	$asset_owner_id = $_GET["asset_owner_id"];
-	$asset_guardian_id = $_GET["asset_guardian_id"];
-	$asset_user_id = $_GET["asset_user_id"];
-	$asset_container_id = $_GET["asset_container_id"];
-	$asset_disabled = $_GET["asset_disabled"];
-	$asset_classification = $_GET["asset_classification"];
-	$asset_bu_join = $_GET["asset_bu_join"];
+	$asset_id = isset($_GET["asset_id"])?$_GET["asset_id"]:null;
+	$asset_name = isset($_GET["asset_name"])?$_GET["asset_name"]:null;
+	$asset_description = isset($_GET["asset_description"])?$_GET["asset_description"]:null;
+	$asset_media_type_id = isset($_GET["asset_media_type_id"])?$_GET["asset_media_type_id"]:null;
+	$asset_legal_id = isset($_GET["asset_legal_id"])?$_GET["asset_legal_id"]:null;
+	$asset_label_id = isset($_GET["asset_label_id"])?$_GET["asset_label_id"]:null;
+	$asset_owner_id = isset($_GET["asset_owner_id"])?$_GET["asset_owner_id"]:null;
+	$asset_guardian_id = isset($_GET["asset_guardian_id"])?$_GET["asset_guardian_id"]:null;
+	$asset_user_id = isset($_GET["asset_user_id"])?$_GET["asset_user_id"]:null;
+	$asset_container_id = isset($_GET["asset_container_id"])?$_GET["asset_container_id"]:null;
+	$asset_disabled = isset($_GET["asset_disabled"])?$_GET["asset_disabled"]:null;
+	$asset_classification = isset($_GET["asset_classification"])?$_GET["asset_classification"]:null;
+	$asset_bu_join = isset($_GET["asset_bu_join"])?$_GET["asset_bu_join"]:null;
 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($asset_id)) {

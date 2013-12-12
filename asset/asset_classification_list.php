@@ -5,31 +5,31 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
-	$section = $_GET["section"];
-	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
+	$section = isset($_GET["section"])?$_GET["section"]:null;
+	$subsection = isset($_GET["subsection"])?$_GET["subsection"]:null;
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_edit = build_base_url($section,"asset_classification_edit");
 	$base_url_list = build_base_url($section,"asset_classification_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$asset_classification_id = $_GET["asset_classification_id"];
-	$asset_classification_name = $_GET["asset_classification_name"];
-	$asset_classification_criteria = $_GET["asset_classification_criteria"];
-	$asset_classification_type = $_GET["asset_classification_type"];
-	$asset_classification_type_new = $_GET["asset_classification_type_new"];
+	$asset_classification_id = isset($_GET["asset_classification_id"])?$_GET["asset_classification_id"]:null;
+	$asset_classification_name = isset($_GET["asset_classification_name"])?$_GET["asset_classification_name"]:null;
+	$asset_classification_criteria = isset($_GET["asset_classification_criteria"])?$_GET["asset_classification_criteria"]:null;
+	$asset_classification_type = isset($_GET["asset_classification_type"])?$_GET["asset_classification_type"]:null;
+	$asset_classification_type_new = isset($_GET["asset_classification_type_new"])?$_GET["asset_classification_type_new"]:null;
 
 	if ($asset_classification_type_new) {
 		$asset_classification_type = $asset_classification_type_new;
 	}
 
-	$asset_classification_value = $_GET["asset_classification_value"];
+	$asset_classification_value = isset($_GET["asset_classification_value"])?$_GET["asset_classification_value"]:null;
 	if (!is_numeric($asset_classification_value)) {
 		$asset_classification_value = 1;
 	}
 
-	$asset_classification_disabled = $_GET["asset_classification_disabled"];
+	$asset_classification_disabled = isset($_GET["asset_classification_disabled"])?$_GET["asset_classification_disabled"]:null;
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($asset_classification_id)) {

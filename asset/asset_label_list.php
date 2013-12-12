@@ -5,21 +5,21 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"asset_label_list");
 	$base_url_edit = build_base_url($section,"asset_label_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$asset_label_id = $_GET["asset_label_id"];
-	$asset_label_name = $_GET["asset_label_name"];
-	$asset_label_criteria = $_GET["asset_label_criteria"];
+	$asset_label_id = isset($_GET["asset_label_id"])?$_GET["asset_label_id"]:null;
+	$asset_label_name = isset($_GET["asset_label_name"])?$_GET["asset_label_name"]:null;
+	$asset_label_criteria = isset($_GET["asset_label_criteria"])?$_GET["asset_label_criteria"]:null;
 
 
-	$asset_label_disabled = $_GET["asset_label_disabled"];
+	$asset_label_disabled = isset($_GET["asset_label_disabled"])?$_GET["asset_label_disabled"]:null;
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($asset_label_id)) {

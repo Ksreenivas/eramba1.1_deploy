@@ -8,10 +8,10 @@
 	include_once("lib/security_services_lib.php");
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"data_asset_list");
 	$base_url_edit = build_base_url($section,"data_asset_edit");
@@ -20,12 +20,12 @@
 	$security_services_url = build_base_url("security_services","security_catalogue_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$data_asset_id = $_GET["data_asset_id"];
-	$data_asset_asset_id = $_GET["asset_id"];
-	$data_asset_status_id = $_GET["data_asset_status_id"];
-	$data_asset_description = $_GET["data_asset_description"];
-	$security_services_id = $_GET["security_services_id"];
-	$data_asset_disabled = $_GET["data_asset_disabled"];
+	$data_asset_id = isset($_GET["data_asset_id"])?$_GET["data_asset_id"]:null;
+	$data_asset_asset_id = isset($_GET["asset_id"])?$_GET["asset_id"]:null;
+	$data_asset_status_id = isset($_GET["data_asset_status_id"])?$_GET["data_asset_status_id"]:null;
+	$data_asset_description = isset($_GET["data_asset_description"])?$_GET["data_asset_description"]:null;
+	$security_services_id = isset($_GET["security_services_id"])?$_GET["security_services_id"]:null;
+	$data_asset_disabled = isset($_GET["data_asset_disabled"])?$_GET["data_asset_disabled"]:null;
 	
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update_data_asset" && is_numeric($data_asset_id)) {
