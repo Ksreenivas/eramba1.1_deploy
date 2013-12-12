@@ -10,30 +10,30 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
-	$section = $_GET["section"];
-	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$sort = isset($_GET["sort"]) ? $_GET["sort"]:null;
+	$section = isset($_GET["section"])? $_GET["section"]:null;
+	$subsection = isset($_GET["subsection"]) ? $_GET["subsection"]:null;
+	$action = isset($_GET["action"]) ? $_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"security_incident_list");
 	$base_url_edit  = build_base_url($section,"security_incident_edit");
 	$service_url = build_base_url("security_services","security_catalogue_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$security_incident_id = $_GET["security_incident_id"];
-	$security_incident_owner_id = $_GET["security_incident_owner_id"];
-	$security_incident_tp_id = $_GET["security_incident_tp_id"];
-	$security_incident_title = $_GET["security_incident_title"];
-	$security_incident_open_date = $_GET["security_incident_open_date"];
-	$security_incident_description = $_GET["security_incident_description"];
-	$security_incident_compromised_asset_id = $_GET["security_incident_compromised_asset_id"];
-	$security_incident_closure_date = $_GET["security_incident_closure_date"];
-	$security_incident_classification_id = $_GET["security_incident_classification_id"];
-	$security_incident_status_id = $_GET["security_incident_status_id"];
-	$security_incident_disabled = $_GET["security_incident_disabled"];
-	$security_incident_service = $_GET["security_incident_service"];
-	$security_incident_reporter_id = $_GET["security_incident_reporter_id"];
-	$security_incident_victim_id = $_GET["security_incident_victim_id"];
+	$security_incident_id = isset($_GET["security_incident_id"])? $_GET["security_incident_id"]:null;
+	$security_incident_owner_id = isset($_GET["security_incident_owner_id"])? $_GET["security_incident_owner_id"]:null;
+	$security_incident_tp_id = isset($_GET["security_incident_tp_id"])? $_GET["security_incident_tp_id"]:null;
+	$security_incident_title = isset($_GET["security_incident_title"])? $_GET["security_incident_title"]:null;
+	$security_incident_open_date = isset($_GET["security_incident_open_date"]) ? $_GET["security_incident_open_date"]:null;
+	$security_incident_description = isset($_GET["security_incident_description"])? $_GET["security_incident_description"]:null;
+	$security_incident_compromised_asset_id = isset($_GET["security_incident_compromised_asset_id"])? $_GET["security_incident_compromised_asset_id"]:null;
+	$security_incident_closure_date = isset($_GET["security_incident_closure_date"])? $_GET["security_incident_closure_date"]:null;
+	$security_incident_classification_id = isset($_GET["security_incident_classification_id"])? $_GET["security_incident_classification_id"]:null;
+	$security_incident_status_id = isset($_GET["security_incident_status_id"])? $_GET["security_incident_status_id"]:null;
+	$security_incident_disabled = isset($_GET["security_incident_disabled"])? $_GET["security_incident_disabled"]:null;
+	$security_incident_service = isset($_GET["security_incident_service"])? $_GET["security_incident_service"]:null;
+	$security_incident_reporter_id = isset($_GET["security_incident_reporter_id"])? $_GET["security_incident_reporter_id"]:null;
+	$security_incident_victim_id = isset($_GET["security_incident_victim_id"])? $_GET["security_incident_victim_id"]:null;
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "edit" && is_numeric($security_incident_id)) {
