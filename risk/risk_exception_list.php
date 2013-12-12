@@ -21,7 +21,11 @@
 	$risk_exception_expiration = filter_input( INPUT_GET, "risk_exception_expiration", FILTER_SANITIZE_STRING );
 	$risk_exception_status = filter_input( INPUT_GET, "risk_exception_status", FILTER_SANITIZE_STRING );
 
-	$risk_exception_disabled = $_GET["risk_exception_disabled"];
+if (!empty($_GET['risk_exception_disabled '])) {
+    $risk_exception_disabled  = $_GET['risk_exception_disabled '];
+} else {
+    $risk_exception_disabled  = ''; //whatever your default value
+}
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($risk_exception_id)) {

@@ -17,8 +17,13 @@
 	$risk_classification_id = filter_input( INPUT_GET, "risk_classification_id", FILTER_SANITIZE_NUMBER_INT );
 	$risk_classification_name = filter_input( INPUT_GET, "risk_classification_name", FILTER_SANITIZE_STRING );
 	$risk_classification_criteria = filter_input( INPUT_GET, "risk_classification_criteria", FILTER_SANITIZE_STRING );
-	$risk_classification_type = $_GET["risk_classification_type"];
-	$risk_classification_type_new = filter_input( INPUT_GET, "risk_classification_type_new", FILTER_SANITIZE_STRING );
+if (!empty($_GET['risk_classification_type'])) {
+    $risk_classification_type = $_GET['risk_classification_type'];
+} else {
+    $risk_classification_type = ''; //whatever your default value
+}
+
+$risk_classification_type_new = filter_input( INPUT_GET, "risk_classification_type_new", FILTER_SANITIZE_STRING );
 
 	if ($risk_classification_type_new) {
 		$risk_classification_type = $risk_classification_type_new;
@@ -29,9 +34,14 @@
 		$risk_classification_value = 1;
 	}
 
-	$risk_classification_disabled = $_GET["risk_classification_disabled"];
-	 
-	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
+if (!empty($_GET['risk_classification_disabled'])) {
+    $risk_classification_disabled = $_GET['risk_classification_disabled'];
+} else {
+    $risk_classification_disabled = ''; //whatever your default value
+}
+
+
+#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($risk_classification_id)) {
 		$risk_classification_update = array(
 			'risk_classification_name' => $risk_classification_name,

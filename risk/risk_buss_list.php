@@ -28,7 +28,7 @@
 	$base_url_edit = build_base_url($section,"risk_buss_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$bu_id = $_GET["bu_id"];
+	$bu_id = isset ($_GET["bu_id"]) ? $_GET["bu_id"]:null;
 	
 	if ($action == "update") {
 		if (is_array($bu_id)) {
@@ -47,7 +47,7 @@
 		}
 	}
 
-	$risk_id = $_GET["risk_id"];
+	$risk_id = isset ($_GET["risk_id"]) ? $_GET["risk_id"]:null;
 	
 	# if i get a risk_id, i want to make sure it's a really valid one...otherwise void
 	if ($risk_id) {
@@ -63,11 +63,11 @@
 	$risk_vulnerabilities = filter_input(INPUT_GET,"risk_vulnerabilities",FILTER_SANITIZE_STRING);
 	$risk= filter_input(INPUT_GET,"risk",FILTER_SANITIZE_NUMBER_INT);
 	# $tp_asset_id= filter_input(INPUT_GET,"tp_asset_id",FILTER_SANITIZE_NUMBER_INT);
-	$tp_asset_id = $_GET["tp_asset_id"];
-	$risk_mitigation_bcm_id = $_GET["risk_mitigation_bcm_id"];
-	$risk_classification = $_GET["risk_classification"];
+	$tp_asset_id = isset ($_GET["tp_asset_id"]) ? $_GET["tp_asset_id"]:null;
+	$risk_mitigation_bcm_id = isset ($_GET["risk_mitigation_bcm_id"]) ? $_GET["risk_mitigation_bcm_id"]:null;
+	$risk_classification = isset ($_GET["risk_classification"]) ? $_GET["risk_classification"]:null;
 	# $risk_classification= filter_input(INPUT_GET,"risk_classification",FILTER_SANITIZE_NUMBER_INT);
-	$risk_classification_score = $_GET["risk_classification_score"];
+	$risk_classification_score = isset ($_GET["risk_classification_score"]) ? $_GET["risk_classification_score"]:null;
 	# $risk_classification_score= filter_input(INPUT_GET,"risk_classification_score",FILTER_SANITIZE_NUMBER_INT);
 	if (!is_numeric($risk_classification_score)) {
 		$risk_classification_score = 0;
@@ -77,21 +77,21 @@
 		$risk_title = "Un-named Risk";
 	}
 
-	$risk_mitigation_strategy_id = $_GET["risk_mitigation_strategy_id"];
+	$risk_mitigation_strategy_id = isset ($_GET["risk_mitigation_strategy_id"]) ? $_GET["risk_mitigation_strategy_id"]:null;
 	# $risk_mitigation_strategy_id= filter_input(INPUT_GET,"risk_mitigation_strategy_id",FILTER_SANITIZE_NUMBER_INT);
-	$security_services_id = $_GET["security_services_id"];
+	$security_services_id = isset ($_GET["security_services_id"]) ? $_GET["security_services_id"]:null;
 	# $security_services_id= filter_input(INPUT_GET,"security_services_id",FILTER_SANITIZE_NUMBER_INT);
-	$risk_exception_id = $_GET["risk_exception_id"];
+	$risk_exception_id = isset ($_GET["risk_exception_id"]) ? $_GET["risk_exception_id"]:null;
 	# $risk_exception_id= filter_input(INPUT_GET,"risk_exception_id",FILTER_SANITIZE_NUMBER_INT);
 
-	$risk_periodicity_review = $_GET["risk_periodicity_review"];
-	$risk_residual_score = $_GET["risk_residual_score"];
+	$risk_periodicity_review = isset ($_GET["risk_periodicity_review"]) ? $_GET["risk_periodicity_review"]:null;
+	$risk_residual_score = isset ($_GET["risk_residual_score"]) ? $_GET["risk_residual_score"]:null;
 	if (!is_numeric($risk_residual_score)) {
 		$risk_residual_score = $risk_classification_score;
 	}
 
-	$security_services_id = $_GET["security_services_id"];
-	$risk_exception_id = $_GET["risk_exception_id"];
+	$security_services_id = isset ($_GET["security_services_id"]) ? $_GET["security_services_id"]:null;
+	$risk_exception_id = isset ($_GET["risk_exception_id"]) ? $_GET["risk_exception_id"]:null;
 	
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" && is_numeric($risk_id) && !empty($bu_id)) {
