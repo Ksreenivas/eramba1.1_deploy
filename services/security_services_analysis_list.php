@@ -9,8 +9,8 @@
 
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
-	$sort = $_GET["sort"];
+	$action =isset($_GET["action"]) ? $_GET["action"] : null;
+	$sort = isset($_GET["sort"]) ? $_GET["sort"] : null;
 
 	$base_url_list = build_base_url($section,"security_services_analysis_list");
 	$base_url_services = build_base_url("security_services","security_catalogue_list");

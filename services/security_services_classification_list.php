@@ -5,21 +5,21 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"]) ? $_GET["sort"] : null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"]) ? $_GET["action"] : null;
 	
 	$base_url_list = build_base_url($section,"security_services_classification_list");
 	$base_url_edit = build_base_url($section,"security_services_classification_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$security_services_classification_id = $_GET["security_services_classification_id"];
-	$security_services_classification_name = $_GET["security_services_classification_name"];
-	$security_services_classification_criteria = $_GET["security_services_classification_criteria"];
+	$security_services_classification_id = isset($_GET["security_services_classification_id"]) ? $_GET["security_services_classification_id"] : null;
+	$security_services_classification_name =isset($_GET["security_services_classification_name"]) ? $_GET["security_services_classification_name"] : null;
+	$security_services_classification_criteria = isset($_GET["security_services_classification_criteria"]) ? $_GET["security_services_classification_criteria"] : null;
 
 
-	$security_services_classification_disabled = $_GET["security_services_classification_disabled"];
+	$security_services_classification_disabled = isset($_GET["security_services_classification_disabled"]) ? $_GET["security_services_classification_disabled"] : null;
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($security_services_classification_id)) {

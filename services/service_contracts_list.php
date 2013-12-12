@@ -12,24 +12,24 @@
 	global $services_conf;
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"]) ? $_GET["sort"] : null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action =isset($_GET["action"]) ? $_GET["action"] : null;
 	
 	$base_url_list  = build_base_url($section,"service_contracts_list");
 	$base_url_edit  = build_base_url($section,"service_contracts_edit");
 	$tp_url = build_base_url("organization","tp_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$service_contracts_id = $_GET["service_contracts_id"];
-	$service_contracts_name = $_GET["service_contracts_name"];
-	$service_contracts_description = $_GET["service_contracts_description"];
-	$service_contracts_value = $_GET["service_contracts_value"];
-	$service_contracts_start = $_GET["service_contracts_start"];
-	$service_contracts_end = $_GET["service_contracts_end"];
-	$service_contracts_provider_id = $_GET["service_contracts_provider_id"];
-	$service_contracts_disabled = $_GET["service_contracts_disabled"];
+	$service_contracts_id =isset($_GET["service_contracts_id"]) ? $_GET["service_contracts_id"] : null;
+	$service_contracts_name =isset($_GET["service_contracts_name"]) ? $_GET["service_contracts_name"] : null;
+	$service_contracts_description = isset($_GET["service_contracts_description"]) ? $_GET["service_contracts_description"] : null;
+	$service_contracts_value = isset($_GET["service_contracts_value"]) ? $_GET["service_contracts_value"] : null;
+	$service_contracts_start = isset($_GET["service_contracts_start"]) ? $_GET["service_contracts_start"] : null;
+	$service_contracts_end = isset($_GET["service_contracts_end"]) ? $_GET["service_contracts_end"] : null;
+	$service_contracts_provider_id = isset($_GET["service_contracts_provider_id"]) ? $_GET["service_contracts_provider_id"] : null;
+	$service_contracts_disabled = isset($_GET["service_contracts_disabled"]) ? $_GET["service_contracts_disabled"] : null;
 	
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update_service_contracts" && is_numeric($service_contracts_id)) {
