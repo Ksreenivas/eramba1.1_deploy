@@ -7,10 +7,10 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"compliance_audit_list");
 	$base_url_edit = build_base_url($section,"compliance_audit_edit");
@@ -22,20 +22,20 @@
 	$base_url_list_attachments = build_base_url("attachments","attachments_list");
 
 	# local variables - YOU MUST ADJUST THIS! 
-	$compliance_audit_id = $_GET["compliance_audit_id"];
-	$compliance_audit_title = $_GET["compliance_audit_title"];
-	$compliance_audit_date = $_GET["compliance_audit_date"];
-	$compliance_audit_package_id = $_GET["compliance_audit_package_id"];
-	$compliance_audit_disabled = $_GET["compliance_audit_disabled"];
+	$compliance_audit_id = isset($_GET["compliance_audit_id"])?$_GET["compliance_audit_id"]:null;
+	$compliance_audit_title = isset($_GET["compliance_audit_title"])?$_GET["compliance_audit_title"]:null;
+	$compliance_audit_date = isset($_GET["compliance_audit_date"])?$_GET["compliance_audit_date"]:null;
+	$compliance_audit_package_id = isset($_GET["compliance_audit_package_id"])?$_GET["compliance_audit_package_id"]:null;
+	$compliance_audit_disabled = isset($_GET["compliance_audit_disabled"])?$_GET["compliance_audit_disabled"]:null;
 	
 	# compliance finding stuf
-	$compliance_finding_id = $_GET["compliance_finding_id"];
-	$compliance_finding_title = $_GET["compliance_finding_title"];
-	$compliance_finding_description = $_GET["compliance_finding_description"];
-	$compliance_finding_status = $_GET["compliance_finding_status"];
-	$compliance_finding_deadline = $_GET["compliance_finding_deadline"];
-	$compliance_finding_disabled = $_GET["compliance_finding_disabled"];
-	$compliance_finding_package_item_id = $_GET["compliance_finding_package_item_id"];
+	$compliance_finding_id = isset($_GET["compliance_finding_id"])?$_GET["compliance_finding_id"]:null;
+	$compliance_finding_title = isset($_GET["compliance_finding_title"])?$_GET["compliance_finding_title"]:null;
+	$compliance_finding_description = isset($_GET["compliance_finding_description"])?$_GET["compliance_finding_description"]:null;
+	$compliance_finding_status = isset($_GET["compliance_finding_status"])?$_GET["compliance_finding_status"]:null;
+	$compliance_finding_deadline = isset($_GET["compliance_finding_deadline"])?$_GET["compliance_finding_deadline"]:null;
+	$compliance_finding_disabled = isset($_GET["compliance_finding_disabled"])?$_GET["compliance_finding_disabled"]:null;
+	$compliance_finding_package_item_id = isset($_GET["compliance_finding_package_item_id"])?$_GET["compliance_finding_package_item_id"]:null;
 	 
 	# actions for compliance findings stuff ..
 	if ($action == "edit_compliance_finding" & is_numeric($compliance_finding_id)) {

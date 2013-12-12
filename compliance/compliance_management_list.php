@@ -5,7 +5,7 @@
 
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_step_two = build_base_url($section,"compliance_management_step_two");
 
