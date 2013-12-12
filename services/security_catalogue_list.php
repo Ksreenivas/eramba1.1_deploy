@@ -27,10 +27,10 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"]) ? $_GET["sort"] : null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"]) ? $_GET["action"] : null;
 	
 	$base_url_security_incident = build_base_url("operations","security_incident_edit");
 	$base_url_list = build_base_url($section,"security_catalogue_list");
@@ -42,29 +42,29 @@
 	$base_url_maintenance_report_list = build_base_url($section,"security_services_maintenance_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$security_services_id = $_GET["security_services_id"];
-	$security_services_name = $_GET["security_services_name"];
-	$security_services_regular_maintenance = $_GET["security_services_regular_maintenance"];
-	$security_services_maintenance_calendar= $_GET["security_services_maintenance_calendar"];
-	$security_services_objective = $_GET["security_services_objective"];
-	$security_services_documentation_url = $_GET["security_services_documentation_url"];
-	$security_services_status = $_GET["security_services_status"];
-	$security_services_classification_id = $_GET["security_services_classification_id"];
+	$security_services_id = isset($_GET["security_services_id"]) ? $_GET["security_services_id"] : null;
+	$security_services_name = isset($_GET["security_services_name"]) ? $_GET["security_services_name"] : null;
+	$security_services_regular_maintenance = isset($_GET["security_services_regular_maintenance"]) ? $_GET["security_services_regular_maintenance"] : null;
+	$security_services_maintenance_calendar= isset($_GET["security_services_maintenance_calendar"]) ? $_GET["security_services_maintenance_calendar"] : null;
+	$security_services_objective =isset($_GET["security_services_objective"]) ? $_GET["security_services_objective"] : null;
+	$security_services_documentation_url = isset($_GET["security_services_documentation_url"]) ? $_GET["security_services_documentation_url"] : null;
+	$security_services_status = isset($_GET["security_services_status"]) ? $_GET["security_services_status"] : null;
+	$security_services_classification_id = isset($_GET["security_services_classification_id"]) ? $_GET["security_services_classification_id"] : null;
 
 	if (!is_numeric($security_services_status)) {
 		$security_services_status="1";
 	}
 
-	$security_services_audit_metric = $_GET["security_services_audit_metric"];
-	$security_services_audit_success_criteria = $_GET["security_services_audit_success_criteria"];
-	$security_services_audit_calendar = $_GET["security_services_audit_calendar"];
-	$service_contracts_id = $_GET["service_contracts_id"];
+	$security_services_audit_metric = isset($_GET["security_services_audit_metric"]) ? $_GET["security_services_audit_metric"] : null;
+	$security_services_audit_success_criteria =isset($_GET["security_services_audit_success_criteria"]) ? $_GET["security_services_audit_success_criteria"] : null;
+	$security_services_audit_calendar =isset($_GET["security_services_audit_calendar"]) ? $_GET["security_services_audit_calendar"] : null;
+	$service_contracts_id =isset($_GET["service_contracts_id"]) ? $_GET["service_contracts_id"] : null;
 		
 
-	$security_services_cost_capex = $_GET["security_services_cost_capex"];
-	$security_services_cost_opex = $_GET["security_services_cost_opex"];
-	$security_services_cost_operational_resource = $_GET["security_services_cost_operational_resource"];
-	$security_services_disabled = $_GET["security_services_disabled"];
+	$security_services_cost_capex = isset($_GET["security_services_cost_capex"]) ? $_GET["security_services_cost_capex"] : null;
+	$security_services_cost_opex = isset($_GET["security_services_cost_opex"]) ? $_GET["security_services_cost_opex"] : null;
+	$security_services_cost_operational_resource = isset($_GET["security_services_cost_operational_resource"]) ? $_GET["security_services_cost_operational_resource"] : null;
+	$security_services_disabled = isset($_GET["security_services_disabled"]) ? $_GET["security_services_disabled"] : null;
 	
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" && is_numeric($security_services_id)) {

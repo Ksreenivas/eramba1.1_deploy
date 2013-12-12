@@ -5,22 +5,22 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"compliance_exception_list");
 	$base_url_edit = build_base_url($section,"compliance_exception_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$compliance_exception_id = $_GET["compliance_exception_id"];
-	$compliance_exception_title = $_GET["compliance_exception_title"];
-	$compliance_exception_description = $_GET["compliance_exception_description"];
-	$compliance_exception_author = $_GET["compliance_exception_author"];
-	$compliance_exception_expiration = $_GET["compliance_exception_expiration"];
+	$compliance_exception_id = isset($_GET["compliance_exception_id"])?$_GET["compliance_exception_id"]:null;
+	$compliance_exception_title = isset($_GET["compliance_exception_title"])?$_GET["compliance_exception_title"]:null;
+	$compliance_exception_description = isset($_GET["compliance_exception_description"])?$_GET["compliance_exception_description"]:null;
+	$compliance_exception_author = isset($_GET["compliance_exception_author"])?$_GET["compliance_exception_author"]:null;
+	$compliance_exception_expiration = isset($_GET["compliance_exception_expiration"])?$_GET["compliance_exception_expiration"]:null;
 
-	$compliance_exception_disabled = $_GET["compliance_exception_disabled"];
+	$compliance_exception_disabled = isset($_GET["compliance_exception_disabled"])?$_GET["compliance_exception_disabled"]:null;
 	 
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" & is_numeric($compliance_exception_id)) {

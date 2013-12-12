@@ -7,21 +7,21 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
+	$sort = isset ($_GET["sort"]) ? $_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset ($_GET["action"]) ? $_GET["action"]:null;
 	
 	$base_url_list = build_base_url($section,"system_roles_list");
 	$base_url_edit = build_base_url($section,"system_roles_edit");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$system_group_role_id = $_GET["system_group_role_id"];
-	$system_group_role_name = $_GET["system_group_role_name"];
-	$system_group_role_description = $_GET["system_group_role_description"];
-	$system_group_role_disabled = $_GET["system_group_role_disabled"];
-	$system_group_role_read_access = $_GET["system_group_role_read_access"];
-	$system_group_role_write_access = $_GET["system_group_role_write_access"];
+	$system_group_role_id = isset ($_GET["system_group_role_id"]) ? $_GET["system_group_role_id"]:null;
+	$system_group_role_name =isset ($_GET["system_group_role_name"]) ? $_GET["system_group_role_name"]:null;
+	$system_group_role_description = isset ($_GET["system_group_role_description"]) ? $_GET["system_group_role_description"]:null;
+	$system_group_role_disabled = isset ($_GET["system_group_role_disabled"]) ? $_GET["system_group_role_disabled"]:null;
+	$system_group_role_read_access = isset ($_GET["system_group_role_read_access"]) ? $_GET["system_group_role_read_access"]:null;
+	$system_group_role_write_access = isset ($_GET["system_group_role_write_access"]) ? $_GET["system_group_role_write_access"]:null;
 
 	# cant do naything without name or roels
 	if ($action == "update" && empty($system_group_role_name)) {

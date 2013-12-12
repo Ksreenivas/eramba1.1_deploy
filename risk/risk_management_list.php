@@ -27,7 +27,7 @@
 	# local variables - YOU MUST ADJUST THIS! 
 	# i need an asset...if there's no asset i'm not doing anything!
 	//$asset_id = filter_input( INPUT_GET, "asset_id", FILTER_SANITIZE_NUMBER_INT );
-	$asset_id = $_GET['asset_id'];
+	$asset_id = isset ($_GET['asset_id']) ? $_GET['asset_id']:null;
 
 	if ($action == "update") {
 		if (is_array($asset_id)) {
@@ -59,7 +59,7 @@
 	$risk_title = filter_input( INPUT_GET, "risk_title", FILTER_SANITIZE_STRING );
 	$risk_threat = filter_input( INPUT_GET, "risk_threat", FILTER_SANITIZE_STRING );
 	$risk_vulnerabilities = filter_input( INPUT_GET, "risk_vulnerabilities", FILTER_SANITIZE_STRING );
-	$risk_classification = $_GET["risk_classification"];
+	$risk_classification = isset ($_GET["risk_classification"]) ? $_GET["risk_classification"]:null;
 	$risk_classification_score = filter_input( INPUT_GET, "risk_classification_score", FILTER_SANITIZE_NUMBER_INT );
 	if (!is_numeric($risk_classification_score)) {
 		$risk_classification_score = 0;
@@ -70,18 +70,18 @@
 	}
 
 	$risk_mitigation_strategy_id = filter_input( INPUT_GET, "risk_mitigation_strategy_id", FILTER_SANITIZE_NUMBER_INT );
-	$security_services_id = $_GET["security_services_id"];
-	$risk_exception_id = $_GET["risk_exception_id"];
+	$security_services_id = isset ($_GET["security_services_id"]) ? $_GET["security_services_id"]:null;
+	$risk_exception_id = isset ($_GET["risk_exception_id"]) ? $_GET["risk_exception_id"]:null;
 
-	$risk_periodicity_review = filter_var( $_GET["risk_periodicity_review"], FILTER_SANITIZE_STRING );
+	$risk_periodicity_review =isset($risk_periodicity_review)?filter_var( $_GET["risk_periodicity_review"], FILTER_SANITIZE_STRING ):null;
 	$risk_residual_score = filter_input( INPUT_GET, "risk_residual_score", FILTER_SANITIZE_NUMBER_INT );
 	if (!is_numeric($risk_residual_score)) {
 		$risk_residual_score = $risk_classification_score;
 	}
 
-	$security_services_id = $_GET["security_services_id"];
-	$risk_exception_id = $_GET["risk_exception_id"];
-	
+	$security_services_id = isset ($_GET["security_services_id"]) ? $_GET["security_services_id"]:null;
+	$risk_exception_id = isset ($_GET["risk_exception_id"]) ? $_GET["risk_exception_id"]:null;
+
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "update" && is_numeric($risk_id) && !empty($asset_id)) {
 		$risk_update = array(

@@ -6,10 +6,10 @@
 	include_once("lib/system_records_lib.php");
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
-	$sort = $_GET["sort"];
+	$sort = isset($_GET["sort"])?$_GET["sort"]:null;
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$action = isset($_GET["action"])?$_GET["action"]:null;
 	
 	# i might need post as well
 	if ($_POST["action"] == "upload_compliance_package") {
@@ -28,18 +28,18 @@
 	$compliance_package_url = build_base_url("organization","tp_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$compliance_package_id = $_GET["compliance_package_id"];
-	$compliance_package_tp_id = $_GET["compliance_package_tp_id"];
-	$compliance_package_original_id = $_GET["compliance_package_original_id"];
-	$compliance_package_name = $_GET["compliance_package_name"];
-	$compliance_package_description = $_GET["compliance_package_description"];
-	$compliance_package_type_id = $_GET["compliance_package_type_id"];
-	$compliance_package_disabled = $_GET["compliance_package_disabled"];
+	$compliance_package_id = isset($_GET["compliance_package_id"])?$_GET["compliance_package_id"]:null;
+	$compliance_package_tp_id = isset($_GET["compliance_package_tp_id"])?$_GET["compliance_package_tp_id"]:null;
+	$compliance_package_original_id = isset($_GET["compliance_package_original_id"])?$_GET["compliance_package_original_id"]:null;
+	$compliance_package_name = isset($_GET["compliance_package_name"])?$_GET["compliance_package_name"]:null;
+	$compliance_package_description = isset($_GET["compliance_package_description"])?$_GET["compliance_package_description"]:null;
+	$compliance_package_type_id = isset($_GET["compliance_package_type_id"])?$_GET["compliance_package_type_id"]:null;
+	$compliance_package_disabled = isset($_GET["compliance_package_disabled"])?$_GET["compliance_package_disabled"]:null;
 	
-	$compliance_package_item_id = $_GET["compliance_package_item_id"];
-	$compliance_package_item_original_id = $_GET["compliance_package_item_original_id"];
-	$compliance_package_item_name = $_GET["compliance_package_item_name"];
-	$compliance_package_item_description = $_GET["compliance_package_item_description"];
+	$compliance_package_item_id = isset($_GET["compliance_package_item_id"])?$_GET["compliance_package_item_id"]:null;
+	$compliance_package_item_original_id = isset($_GET["compliance_package_item_original_id"])?$_GET["compliance_package_item_original_id"]:null;
+	$compliance_package_item_name = isset($_GET["compliance_package_item_name"])?$_GET["compliance_package_item_name"]:null;
+	$compliance_package_item_description = isset($_GET["compliance_package_item_description"])?$_GET["compliance_package_item_description"]:null;
 	
 
 	# i need to make sure i have a tp_id where to asociate whatever compliance package i'm been trown
