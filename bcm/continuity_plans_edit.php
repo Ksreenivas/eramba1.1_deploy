@@ -12,7 +12,7 @@
 	$section = $_GET["section"];
 	$subsection = $_GET["subsection"];
 	$action = $_GET["action"];
-	$bcm_plans_id = $_GET["bcm_plans_id"];
+	$bcm_plans_id = isset($_GET["bcm_plans_id"])? $_GET["bcm_plans_id"]:null;
 	
 	$base_url_list = build_base_url($section,"bcm_plans_list");
 

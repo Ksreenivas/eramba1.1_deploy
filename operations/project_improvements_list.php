@@ -13,37 +13,37 @@
 
 	# general variables - YOU SHOULDNT NEED TO CHANGE THIS
 	$show_id = isset($_GET["show_id"]) ? $_GET["show_id"] : null;
-	$sort = $_GET["sort"];
-	$section = $_GET["section"];
-	$subsection = $_GET["subsection"];
-	$action = $_GET["action"];
+	$sort = isset($_GET["sort"])? $_GET["sort"] : null;
+	$section = isset($_GET["section"]) ? $_GET["section"] : null;
+	$subsection = isset($_GET["subsection"])? $_GET["subsection"]:null;
+	$action = isset($_GET["action"])? $_GET["action"]:null;
 
-	$project_improvements_id = $_GET["project_improvements_id"];
-	$project_improvements_title = $_GET["project_improvements_title"];
-	$project_improvements_goal = $_GET["project_improvements_goal"];
-	$project_improvements_rca = $_GET["project_improvements_rca"];
-	$project_improvements_proactive = $_GET["project_improvements_proactive"];
-	$project_improvements_reactive = $_GET["project_improvements_reactive"];
-	$project_improvements_start = $_GET["project_improvements_start"];
-	$project_improvements_deadline = $_GET["project_improvements_deadline"];
-	$project_improvements_status_id = $_GET["project_improvements_status_id"];
-	$project_improvements_plan_budget = $_GET["project_improvements_plan_budget"];
-	$project_improvements_owner_id = $_GET["project_improvements_owner_id"];
-	$project_improvements_completion = $_GET["project_improvements_completion"];
-	$project_improvements_expenses_date = $_GET["project_improvements_expenses_date"]; 
+	$project_improvements_id = isset($_GET["project_improvements_id"])? $_GET["project_improvements_id"]:null;
+	$project_improvements_title = isset($_GET["project_improvements_title"])? $_GET["project_improvements_title"]:null;
+	$project_improvements_goal = isset($_GET["project_improvements_goal"])? $_GET["project_improvements_goal"]:null;
+	$project_improvements_rca = isset($_GET["project_improvements_rca"])? $_GET["project_improvements_rca"]:null;
+	$project_improvements_proactive = isset($_GET["project_improvements_proactive"])? $_GET["project_improvements_proactive"]:null ;
+	$project_improvements_reactive = isset($_GET["project_improvements_reactive"])? $_GET["project_improvements_reactive"]:null;
+	$project_improvements_start = isset($_GET["project_improvements_start"])? $_GET["project_improvements_start"]:null;
+	$project_improvements_deadline = isset($_GET["project_improvements_deadline"])? $_GET["project_improvements_deadline"]:null;
+	$project_improvements_status_id = isset($_GET["project_improvements_status_id"])? $_GET["project_improvements_status_id"]:null;
+	$project_improvements_plan_budget = isset($_GET["project_improvements_plan_budget"])? $_GET["project_improvements_plan_budget"]:null;
+	$project_improvements_owner_id = isset($_GET["project_improvements_owner_id"])? $_GET["project_improvements_owner_id"]:null;
+	$project_improvements_completion = isset($_GET["project_improvements_completion"])? $_GET["project_improvements_completion"]:null;
+	$project_improvements_expenses_date = isset($_GET["project_improvements_expenses_date"])? $_GET["project_improvements_expenses_date"]:null;
 
 	# expenses stuff
-	$project_improvements_expenses_id = $_GET["project_improvements_expenses_id"];
-	$project_improvements_expenses_description = $_GET["project_improvements_expenses_description"];
-	$project_improvements_expenses_amount = $_GET["project_improvements_expenses_amount"];
-	$project_improvements_expenses_disabled = $_GET["project_improvements_expenses_disabled"];
+	$project_improvements_expenses_id = isset($_GET["project_improvements_expenses_id"])? $_GET["project_improvements_expenses_id"]:null;
+	$project_improvements_expenses_description = isset($_GET["project_improvements_expenses_description"])? $_GET["project_improvements_expenses_description"]:null;
+	$project_improvements_expenses_amount = isset($_GET["project_improvements_expenses_amount"])? $_GET["project_improvements_expenses_amount"]:null;
+	$project_improvements_expenses_disabled = isset($_GET["project_improvements_expenses_disabled"])? $_GET["project_improvements_expenses_disabled"]:null;
 
 	# achievements stuff
-	$project_improvements_achievements_id = $_GET["project_improvements_achievements_id"];
-	$project_improvements_achievements_text = $_GET["project_improvements_achievements_text"];
-	$project_improvements_achievements_date = $_GET["project_improvements_achievements_date"];
-	$project_improvements_achievements_owner = $_GET["project_improvements_achievements_owner"];
-	$project_improvements_achievements_disabled = $_GET["project_improvements_achievements_disabled"];
+	$project_improvements_achievements_id = isset($_GET["project_improvements_achievements_id"])? $_GET["project_improvements_achievements_id"]:null;
+	$project_improvements_achievements_text = isset($_GET["project_improvements_achievements_text"])? $_GET["project_improvements_achievements_text"]:null;
+	$project_improvements_achievements_date = isset($_GET["project_improvements_achievements_date"])? $_GET["project_improvements_achievements_date"]:null;
+	$project_improvements_achievements_owner = isset($_GET["project_improvements_achievements_owner"])? $_GET["project_improvements_achievements_owner"]:null;
+	$project_improvements_achievements_disabled = isset($_GET["project_improvements_achievements_disabled"])? $_GET["project_improvements_achievements_disabled"]:null;
 		
 	# this got to have a value
 	if ($project_improvements_status_id == "-1") {
@@ -58,23 +58,23 @@
 	$base_url_achievements_list = build_base_url($section,"project_improvements_achievements_list");
 	
 	# local variables - YOU MUST ADJUST THIS! 
-	$project_improvements_id = $_GET["project_improvements_id"];
+	$project_improvements_id = isset($_GET["project_improvements_id"])? $_GET["project_improvements_achievements_id"]:null;
 
-	$project_improvements_mitigation_strategy_id = $_GET["project_improvements_mitigation_strategy_id"];
-	$security_services_id = $_GET["security_services_id"];
-	$project_improvements_exception_id = $_GET["project_improvements_exception_id"];
+	$project_improvements_mitigation_strategy_id = isset($_GET["project_improvements_mitigation_strategy_id"])? $_GET["project_improvements_mitigation_strategy_id"]:null;
+	$security_services_id = isset($_GET["security_services_id"])? $_GET["security_services_audit_id"]:null;
+	$project_improvements_exception_id = isset($_GET["project_improvements_exception_id"])? $_GET["project_improvements_exception_id"]:null;
 
-	$project_improvements_periodicity_review = $_GET["project_improvements_periodicity_review"];
+	$project_improvements_periodicity_review = isset($_GET["project_improvements_periodicity_review"])? $_GET["project_improvements_periodicity_review"]:null;
 	if (!is_numeric($project_improvements_periodicity_review) OR $project_improvements_periodicity_review>12 OR $project_improvements_periodicity_review<0) {
 		$project_improvements_periodicity_review = 12;
 	}
-	$project_improvements_residual_score = $_GET["project_improvements_residual_score"];
+	$project_improvements_residual_score = isset($_GET["project_improvements_residual_score"])? $_GET["project_improvements_residual_score"]:null;
 	if (!is_numeric($project_improvements_residual_score)) {
 		$project_improvements_residual_score = $project_improvements_classification_score;
 	}
 
-	$security_services_id = $_GET["security_services_id"];
-	$project_improvements_exception_id = $_GET["project_improvements_exception_id"];
+	$security_services_id = isset($_GET["security_services_id"])? $_GET["security_services_id"]:null;
+	$project_improvements_exception_id = isset($_GET["project_improvements_exception_id"])? $_GET["project_improvements_exception_id"]:null;
 	
 	#actions .. edit, update or disable - YOU MUST ADJUST THIS!
 	if ($action == "edit" && is_numeric($project_improvements_id)) {
